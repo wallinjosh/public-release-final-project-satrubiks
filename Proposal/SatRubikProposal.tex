@@ -1,0 +1,135 @@
+%\documentclass[12pt]{article}
+\documentclass{elsarticle} %A different option for format styling...
+
+\textwidth 6.5in
+\oddsidemargin 0.0in %this is a 1-inch margin
+\evensidemargin 1.0in %matching 1-inch margin
+
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{alltt}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{mathrsfs} %for \mathscr{} 
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{gensymb} %for \degree
+\usepackage{longtable} %for longtabu
+\usepackage{tabu} %for longtabu
+\usepackage{hhline} %for double \hline in longtabu
+\usepackage{array,etoolbox}
+
+\newtheorem{defin}{Definition}
+\newtheorem{intuit}{Intuition}
+
+%Here are the commands included in elsarticle style:
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newdefinition{rmk}{Remark}
+\newproof{pf}{Proof}
+\newproof{pot}{}
+
+\interfootnotelinepenalty=10000
+
+\renewcommand{\phi}{\varphi}
+\newcommand{\always}{\Box}
+\newcommand{\eventually}{\Diamond}
+\newcommand{\calL}{{\cal L}}
+
+\newcommand{\pspic}[2]{\scalebox{#1}{\includegraphics{#2}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure Magic
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{epsfig}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\renewcommand{\topfraction}{.95} %figures can take up at most 95% of the page before being alone
+\renewcommand{\bottomfraction}{.99} %figures can take up at most 99% of the page before being alone
+\renewcommand{\textfraction}{.1} %at most this this % of page will be text before making figure-only page
+\addtolength{\abovecaptionskip}{-3mm}
+
+
+\begin{document}
+
+\title{Applied Formal Methods\\ Final Project: SatRubik}
+
+\author{Nathan Scheirer, Patrick Sivets}
+
+\maketitle
+
+
+{\bf Date: 10/26/17}
+
+
+\section{Project Plan}
+\begin{enumerate}
+\item Define your group and the parameters of your project.
+	\begin{enumerate}
+	\item The SatRubiks group will consist of two members with an end goal of creating a program in the SAT solver, nuXmv, that will solve any initial condition of a Rubik's cube. This project will adhere the precise rules of a Rubik's cube and will begin with the solving of a 2x2x2 cube (for simplicity) and then followed by a 3x3x3 cube.
+	\end{enumerate}
+\item Who are the members of your group?
+	\begin{enumerate}
+	\item Nate Scheirer and Patrick Sivets
+	\end{enumerate}
+\item What is your group name?
+	\begin{enumerate}
+	\item SatRubiks
+	\end{enumerate}
+\item What formal method are you using?
+	\begin{enumerate}
+	\item We will use Satisfiability planning to solve the Rubik's cube.
+	\end{enumerate}
+\item What specifications will you verify?
+	\begin{enumerate}
+	\item The rules that we formulate for the Rubik's cube will need to be verified before the program can be considered accurate.
+	\end{enumerate}
+\item What system will you analyze?
+	\begin{enumerate}
+	\item A Rubik's cube operates in a very specific way so these actions will be the system that we will analyze. (i.e. there are six different possible rotations for a 3x3x3 cube)
+	\end{enumerate}
+\item What does a success look like for your project?
+	\begin{enumerate}
+	\item A success is defined as our nuXmv program being able to return a valid counterexample representing a series of rotations required to solve the Rubik's cube in any inital state. We will begin the project solving a 2x2x2 cube with the hopes that we will have quick success allowing us to move forward and solve the 3x3x3 cube problem.
+	\item A side goal will be to determine the least amount of moves required to solve each inital state.
+	\end{enumerate}
+\item How will you demonstrate your analysis?
+	\begin{enumerate}
+	\item Benchmarks:
+		\begin{enumerate}
+		\item Number of moves, from the calculated counterexample.
+		\item Number of unique moves, from the counterexample. (i.e. How many moves are repeated or unnecessary?)
+		\item Run time, from nuXmv.
+		\end{enumerate}
+	\item Demo:
+		\begin{enumerate}
+		\item We will demonstrate the nuXmv program that we create in class and will report the results in our final project.
+		\end{enumerate}
+	\item Results:
+		\begin{enumerate}
+		\item We will utilize the output of nuXmv and its various commands to analyze our model to verify its correctness and accuracy. This output will also help us to provide details on performance and efficiency.
+		\end{enumerate}
+	\end{enumerate}
+\item Logistics:
+	\begin{enumerate}
+	\item Repo stucture: \\
+		Master (Only merged via pull requests from Develop and will always be in working condition) \\
+		\hspace*{10px} $\uparrow$ \\
+ 		Develop (Working condition but contains changes made by each group member) \\
+ 		\hspace*{10px} $\uparrow$ \\
+		*Feature or bugfix name* (Branches for new features, tests, or bug fixes. Can only be merged to Develop via pull request)
+	\item Members should check that all the changes made and merged to Develop continue to allow the program to opperate before the PR is merged. Documentation and specifications should be up to date as the PR is created as well.
+	\item The group will meet twice a week for at least an hour per meeting. Each member is expected to put at least a total of nine hours of work into the project a week.
+	\end{enumerate}
+\item Timeline:
+	\begin{enumerate}
+	\item 11/3 - Perform research into work previously done on solving Rubik's cubes with SAT solvers, define the Rubik's cube specifications, and begin writing a program to solve the 2x2x2 problem in nuXmv.
+	\item 11/10 - Finish defining specifications and produce preliminary results for the 2x2x2 problem (possibly 3x3x3). Write progress report and preliminary results.
+	\item 11/17 - Refine the 2x2x2 problem and finish, work on porting to the 3x3x3 should be fully underway, and specifications should be concrete at this point.
+	\item 11/24 - Continue work on solving the 3x3x3 problem.
+	\item 12/1 - Preliminary results should be close to verified and work on the final report should commence.
+	\item 12/5 or 12/7 - Finish the 3x3x3 problem, the report, and presentation.
+	\end{enumerate}
+\end{enumerate}
+\end{document}
