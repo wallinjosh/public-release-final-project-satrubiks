@@ -1,0 +1,4 @@
+Hello Dr. Rozier,
+My group and I wanted to apologize for the lateness of our first progress report. We all completely forgot about it, and we will make sure this won't happen again.
+
+In terms of our progress this past week, we have been researching current work done on solving a Rubiks cube with formal methods and have come across some interesting work surrounding it. This has lead us to consider modifying the scope of our project a bit to include modelling the 2x2x2 Rubiks cube in both Spin and NuXmv in order to observe the performance differences. This would then lead us to the best method for solving the more complex 3x3x3 cube. We have also started to mess around with Spin and some of the algorithms we have found online.
