@@ -1,7 +1,11 @@
 # AERE/COMS 407X/507X Final Project
 
 
-## Overview
+## SatRubiks Overview
+Developing a method for solving a Rubik's cube using SAT solvers and model checkers.
 
-This is the git repo for a final project (in lieu of a final exam).
 
+## Contacts
+Nathan Scheirer - scheirer@iastate.edu - 309-221-0602
+Patrick Sivet - 
+Josh Wallin - 
