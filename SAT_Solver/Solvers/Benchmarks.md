@@ -6,12 +6,7 @@
 |3564|32254|
 
 ## Start Pattern
-		y w
-		r r
-b g 	y b		w o		g o
-w g 	w g		y y		r b
-		r o
-		o b
+[Start pattern](sabr_progs/start_pattern.txt)
 
 ## miniSAT/Sabr
 |Parse time|Restarts|Conflicts|Decisions|Propagations|Conflict literals|Memory used|CPU time|
