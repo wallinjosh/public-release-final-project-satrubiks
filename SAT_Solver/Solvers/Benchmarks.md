@@ -18,7 +18,8 @@ w g 	w g		y y		r b
 |---|---|---|---|---|---|---|---|
 |0.01 s|307|114695 (24015/sec)|202109 (42318/sec)|20601439 (4313534/sec)|4016033 (16.40% deleted)|18.83 MB|4.776 s|
 
-# Result
+# Results
+[test](cadical-result.txt)
 
 ## Cadicaly
 |Parse time|Restarts|Conflicts|Decisions|Propagations|Conflict literals|Memory used|CPU time|
