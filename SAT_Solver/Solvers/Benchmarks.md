@@ -1,9 +1,9 @@
 ### Benchmarks for 2x2x2 Rubik's Cube
 
 ## CNF File
-|Number of Variables|Number of Clauses|Start Pattern|Result Files (1-Sabr, 2-Cadical)|
+|Number of Variables|Number of Clauses|Start Pattern|Result Files|
 |---|---|---|---|
-|3564|32254|[1](sabr_progs/start_pattern1.txt)|[1](results/2x2x2/sabr-result1.txt) [2](results/2x2x2/cadical-result1.txt)|
+|3564|32254|[1](sabr_progs/start_pattern1.txt)|[Sabr](results/2x2x2/sabr-result1.txt) [Cadical](results/2x2x2/cadical-result1.txt)|
 
 ## miniSAT/Sabr
 |Parse time|Restarts|Conflicts|Decisions|Propagations|Conflict literals|Memory used|CPU time|
