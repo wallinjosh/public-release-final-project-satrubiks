@@ -5,7 +5,7 @@
 ./sabr <num of levels (ex. 20)> <path to source (.tb file)>
 
 ### Generate dimacs cnf file only (cnf.txt)
-./sabr --cnf <num of levels> <path to source>
+./sabr --cnf [num of levels] [path to source]
 
 ### miniSAT solver only (given cnf.txt)
 ./cnfsat <path to dimacs cnf file>
