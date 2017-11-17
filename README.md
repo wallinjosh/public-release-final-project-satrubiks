@@ -8,6 +8,6 @@ Developing a method for solving a Rubik's cube using SAT solvers and model check
 ## Contacts
 Nathan Scheirer - scheirer@iastate.edu - 309-221-0602
 
-Patrick Sivet - 
+Patrick Sivets -  sivets@iastate.edu  - 763-350-6146 
 
 Josh Wallin - 
