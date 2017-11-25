@@ -13,12 +13,12 @@ o3 o4 	g3 g4	r3 r4	b3 b4;
 
 Start {
 
-		y b;
-		w o;
-o b		o g		w y		o g;
-g b		r r		b g		r r;
-		w y;
-		w y;
+		y w;
+		r r;
+b g 	y b		w o		g o;
+w g 	w g		y y		r b;
+		r o;
+		o b;
 
 }
 
@@ -67,7 +67,7 @@ t1	f1 f3	b1;
 	l2 l1;
 }
 
-DesObj Top:Side{
+DesObj Front:Side{
 	b2 b1;
 	
 o1	w1 w2	r2;
@@ -76,7 +76,7 @@ o2	w3 w4	r1;
 	g1 g2;
 }
 
-DesObj Back:Side{
+DesObj Top:Side{
 	w2 w1;
 
 r2	b1 b2	o1;
@@ -85,7 +85,7 @@ r4	b3 b4	o3;
 	y4 y3;
 }
 
-DesObj Bottom:Side{
+DesObj Back:Side{
 	g3 g4;
 
 o4	y1 y2	r3;
@@ -94,7 +94,7 @@ o3	y3 y4	r4;
 	b4 b3;
 }
 
-DesObj Front:Side{
+DesObj Bottom:Side{
 	w3 w4;
 
 o2	g1 g2	r1;
