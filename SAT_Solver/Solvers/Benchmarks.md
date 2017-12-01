@@ -14,7 +14,7 @@
 
 ### miniSAT/Sabr
 |Run Number|SAT?|Parse time|Restarts|Conflicts|Decisions|Propagations|Conflict literals|Memory used|CPU time|
-|---|---|---|---|---|---|---|---|---|---|
+|---|---|----|---|---|---|---|---|---|---|
 |0|Y|0.01 s|307|114695 (24015/sec)|202109 (42318/sec)|20601439 (4313534/sec)|4016033 (16.40% deleted)|18.83 MB|4.776 s|
 |1|Y|0.01 s|1341|634658 (21611/sec)|960897 (32719/sec)|99098245 (3374261/sec)|23500641 (15.89% deleted)|25.42 MB|29.368 s|
 |2|N|0.01 s|1532|699568 (24952/sec)|1052775 (37551/sec)|98042603 (3497025/sec)|16981488 (23.72% deleted)|24.79 MB|28.036 s|
@@ -25,7 +25,7 @@
 
 ### Cadical
 |Run Number|SAT?|Parse time|Restarts|Conflicts|Decisions|Propagations|Conflict literals|Memory used|CPU time|
-|---|---|---|---|---|---|---|---|---|---|
+|---|---|----|---|---|---|---|---|---|---|
 |0|Y|0.01 s|9813|390697 (11103.13/sec)|1701267 (48347.93/sec)|86345393 (2.45 millions/s)|833294 (7.63% deleted)|15.67 MB|35.67 s|
 |1|Y|0.01 s|4693|155778 (13438.41/sec)|618798 (53381.47/sec)|33080774 (2.85 millions/s)|290392 (7.35% deleted)|9.10 MB|11.59 s|
 |2|N|0.01 s|3167|131378 (16655.43/sec)|455620 (57761.16/sec)|256370000 (3.25 millions/s)|226436 (7.81% deleted)|8.47 MB|7.89 s|
