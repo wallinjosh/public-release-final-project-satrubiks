@@ -38,13 +38,13 @@
 
 ### CNF File Details
 |Run Number|Number of Variables|Number of Clauses|Levels|Start Pattern|Result Files|
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 |0|3564|32254|20|[2x2x2 (1)](sabr_progs/start_patterns3.txt)|[Sabr](results/3x3x3/sabr-result1-20.txt), [Cadical](results/3x3x3/cadical-result1-20.txt)|
 
 
 ### miniSAT/Sabr
 |Run Number|SAT?|Parse time|Restarts|Conflicts|Decisions|Propagations|Conflict literals|Memory used|CPU time|
-|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|
 |0|Y|0.01 s|307|114695 (24015/sec)|202109 (42318/sec)|20601439 (4313534/sec)|4016033 (16.40% deleted)|18.83 MB|4.776 s|
 
 
