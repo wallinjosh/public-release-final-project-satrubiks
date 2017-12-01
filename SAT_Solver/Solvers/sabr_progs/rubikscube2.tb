@@ -13,12 +13,12 @@ o3 o4 	g3 g4	r3 r4	b3 b4;
 
 Start {
 
-		y r;
-		b y;
-g w		r g		o w		g r;
-b o		w b		w r		b y;
-		g o;
-		o y;
+		y b;
+		w o;
+o b		o g		w y		o g;
+g b		r r		b g		r r;
+		w y;
+		w y;
 
 }
 
