@@ -1,0 +1,15 @@
+		w g o
+		w   y
+		w o y
+o g g		r b g		o o b
+y   o		w   w		b   w
+g b b		y y y		g o w
+		r r r
+		r   g
+		o g r
+		w r b
+		b   r
+		b y y
+		
+
+		

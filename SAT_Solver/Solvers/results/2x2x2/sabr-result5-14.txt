@@ -1,0 +1,115 @@
+..... y r 
+..... b y 
+g w r g o w g r 
+b o w b w r b y 
+..... g o 
+..... o y 
+
+Clock Right
+
+..... y g 
+..... b b 
+g w r o w o y r 
+b o w y r w r y 
+..... g b 
+..... o g 
+
+Clock Left
+
+..... y g 
+..... r b 
+b g y o w o y o 
+o w b y r w r g 
+..... r b 
+..... w g 
+
+CounterClock Left
+
+..... y g 
+..... b b 
+g w r o w o y r 
+b o w y r w r y 
+..... g b 
+..... o g 
+
+Clock Top
+
+..... b y 
+..... b g 
+r o w o y r g w 
+b o w y r w r y 
+..... g b 
+..... o g 
+
+CounterClock Left
+
+..... w y 
+..... w g 
+o o g o y r g b 
+r b o y r w r b 
+..... y b 
+..... w g 
+
+CounterClock Top
+
+..... y g 
+..... w w 
+g b o o g o y r 
+r b o y r w r b 
+..... y b 
+..... w g 
+
+CounterClock Back
+
+..... r g 
+..... w w 
+w b o o g y r b 
+g b o y r g y r 
+..... y b 
+..... w o 
+
+Clock Top
+
+..... w r 
+..... w g 
+o o g y r b w b 
+g b o y r g y r 
+..... y b 
+..... w o 
+
+Clock Right
+
+..... w y 
+..... w y 
+o o g b r r g b 
+g b o o g b r r 
+..... y y 
+..... w w 
+
+CounterClock Bottom
+
+..... w y 
+..... w y 
+o o g b r r g b 
+o o g b r r g b 
+..... y w 
+..... y w 
+
+CounterClock Right
+
+..... w g 
+..... w g 
+o o g y r r w b 
+o o g y r r w b 
+..... y b 
+..... y b 
+
+CounterClock Right
+
+..... w w 
+..... w w 
+o o g g r r b b 
+o o g g r r b b 
+..... y y 
+..... y y 
+

@@ -1,5 +1,8 @@
 # Usage
 
+http://sabrlang.org/rubik/
+https://github.com/dbunker/SABR
+
 ## Sabr
 ### Full analysis (Parser-cnf, miniSAT solver, and result parser)
 ./sabr [num of levels (ex. 20)] [path to source (.tb file)]
