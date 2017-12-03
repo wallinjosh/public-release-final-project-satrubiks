@@ -40,18 +40,24 @@
 |Run Number|Number of Variables|Number of Clauses|Levels|Start Pattern|Result Files|
 |---|---|---|---|---|---|
 |0|3564|32254|20|[3x3x3 (1)](sabr_progs/start_patterns3.txt)|[Sabr](results/3x3x3/sabr-result1-20.txt), [Cadical](results/3x3x3/cadical-result1-20.txt)|
+|1|6900|57158|20|[3x3x3 (2)](sabr_progs/start_patterns3.txt)|[Sabr](results/3x3x3/sabr-result2-20.txt), [Cadical](results/3x3x3/cadical-result2-20.txt)|
+|2|3564|32254|20|[3x3x3 (3)](sabr_progs/start_patterns3.txt)|[Sabr](results/3x3x3/sabr-result3-20.txt), [Cadical](results/3x3x3/cadical-result3-20.txt)|
 
 
 ### miniSAT/Sabr
 |Run Number|SAT?|Parse time|Restarts|Conflicts|Decisions|Propagations|Conflict literals|Memory used|CPU time|
 |---|---|---|---|---|---|---|---|---|---|
 |0|Y|0.04 s|48518|34193424 (6783/sec)|48511096 (9623/sec)|11404054664 (2262122/s)|1583191107 (22.12% deleted)|305.36 MB|5041.31 s|
+|1|N|0.01 s|14333|8867805 (20693/sec)|13174103 (30742/sec)|1129266909 (2635125/s)|194515886 (33.45% deleted)|124.95 MB|428.544 s|
+|2|Y|0.04 s|48518|34193424 (6783/sec)|48511096 (9623/sec)|11404054664 (2262122/s)|1583191107 (22.12% deleted)|305.36 MB|5041.31 s|
 
 
 ### Cadical
 |Run Number|SAT?|Parse time|Restarts|Conflicts|Decisions|Propagations|Conflict literals|Memory used|CPU time|
 |---|---|---|---|---|---|---|---|---|---|
 |0|Y|0.04 s|48518|34193424 (6783/sec)|48511096 (9623/sec)|11404054664 (2262122/s)|1583191107 (22.12% deleted)|305.36 MB|5041.31 s|
+|1|Y|0.04 s|48518|34193424 (6783/sec)|48511096 (9623/sec)|11404054664 (2262122/s)|1583191107 (22.12% deleted)|305.36 MB|5041.31 s|
+|2|Y|0.04 s|48518|34193424 (6783/sec)|48511096 (9623/sec)|11404054664 (2262122/s)|1583191107 (22.12% deleted)|305.36 MB|5041.31 s|
 
 
 *This run was not able to be completed in a reasonable amount of time.
