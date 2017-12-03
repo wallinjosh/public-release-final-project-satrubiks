@@ -1,0 +1,300 @@
+/--
+        2x2x2 Rubik's Cube Model
+
+        Addressing particular locations on cube:
+            TRF : Cubelet in Top, Right, Front position
+            TRB : Cubelet in Top, Right, Back position
+            TLF : Cubelet in Top, Left, Front position
+            TLB : Cubelet in Top, Left, Back position
+            DRF : Cubelet in Bottom, Right, Front position
+            DRB : Cubelet in Bottom, Right, Back position
+            DLF : Cubelet in Bottom, Left, Front position
+            DLB : Cubelet in Bottom, Left, Back position
+
+        Numbering for particular cubes:
+            1 : Cubelet with blue, red, white facelets
+            2 : Cubelet with blue, red, yellow facelets
+            3 : Cubelet with blue, orange, white facelets
+            4 : Cubelet with blue, orange, yellow facelets
+            5 : Cubelet with green, red, white facelets
+            6 : Cubelet with green, red, yellow facelets
+            7 : Cubelet with green, orange, white facelets
+            8 : Cubelet with green, orange, yellow facelets
+
+
+
+--/
+
+
+
+
+MODULE main
+  VAR
+  --Move
+    move : {UP, DOWN, LEFT, RIGHT, FRONT, BACK};
+  --Front Side
+    F0 : {green, yellow, white, blue, red, orange};
+    F1 : {green, yellow, white, blue, red, orange};
+    F2 : {green, yellow, white, blue, red, orange};
+    F3 : {green, yellow, white, blue, red, orange};
+  --Back Side
+    B0 : {green, yellow, white, blue, red, orange};
+    B1 : {green, yellow, white, blue, red, orange};
+    B2 : {green, yellow, white, blue, red, orange};
+    B3 : {green, yellow, white, blue, red, orange};
+  --Left Side
+    L0 : {green, yellow, white, blue, red, orange};
+    L1 : {green, yellow, white, blue, red, orange};
+    L2 : {green, yellow, white, blue, red, orange};
+    L3 : {green, yellow, white, blue, red, orange};
+  --Right Side
+    R0 : {green, yellow, white, blue, red, orange};
+    R1 : {green, yellow, white, blue, red, orange};
+    R2 : {green, yellow, white, blue, red, orange};
+    R3 : {green, yellow, white, blue, red, orange};
+  --Up Side
+    U0 : {green, yellow, white, blue, red, orange};
+    U1 : {green, yellow, white, blue, red, orange};
+    U2 : {green, yellow, white, blue, red, orange};
+    U3 : {green, yellow, white, blue, red, orange};
+  --Down side
+    D0 : {green, yellow, white, blue, red, orange};
+    D1 : {green, yellow, white, blue, red, orange};
+    D2 : {green, yellow, white, blue, red, orange};
+    D3 : {green, yellow, white, blue, red, orange};
+
+  LTLSPEC G ! ((F0 = blue) & (F1 = blue) & (F2 = blue) & (F3 = blue));
+
+  ASSIGN
+
+    init(F0) := yellow;
+    init(F1) := yellow;
+    init(F2) := yellow;
+    init(F3) := yellow; 
+
+    init(U0) := blue;
+    init(U1) := blue;
+    init(U2) := blue;
+    init(U3) := blue;
+
+    init(R0) := red;
+    init(R1) := red;
+    init(R2) := red;
+    init(R3) := red;
+
+    init(L0) := orange;
+    init(L1) := orange;
+    init(L2) := orange;
+    init(L3) := orange;
+
+    init(B0) := white;
+    init(B1) := white;
+    init(B2) := white;
+    init(B3) := white;
+
+    init(D0) := green;
+    init(D1) := green;
+    init(D2) := green;
+    init(D3) := green;
+
+    --Front transition rules
+    next(F0) :=
+      case
+        move = UP : L0;
+        move = RIGHT : U0;
+        move = FRONT : F3;
+        TRUE : F0;
+      esac;
+
+    next(F1) :=
+      case
+        move = UP : L1;
+        move = LEFT : D1;
+        move = FRONT : F0;
+        TRUE : F1;
+      esac;
+
+    next(F2) :=
+      case
+        move = DOWN : R2;
+        move = LEFT : D2;
+        move = FRONT : F1;
+        TRUE : F2;
+      esac;
+
+    next(F3) :=
+      case
+        move = DOWN : R3;
+        move = RIGHT : U3;
+        move = FRONT : F2;
+        TRUE : F3;
+      esac;
+    
+    --Right transition rules
+
+    next(R0) :=
+      case
+        move = UP : F0;
+        move = BACK : U1;
+        move = RIGHT : R3;
+        TRUE : R0;
+      esac;
+
+    next(R1) :=
+      case
+        move = UP : F1;
+        move = FRONT : B1;
+        move = RIGHT : R0;
+        TRUE : R1;
+      esac;
+    
+    next(R2) :=
+      case
+        move = DOWN : B2;
+        move = FRONT : B2;
+        move = RIGHT : R1;
+        TRUE : R2;
+      esac;
+    
+    next(R3) :=
+      case
+        move = DOWN : B3;
+        move = BACK : U0;
+        move = RIGHT : R2;
+        TRUE : R3;
+      esac;
+
+    --Up transition rules
+
+    next(U0) :=
+      case
+        move = RIGHT : B0;
+        move = BACK : L3;
+        move = UP : U3;
+        TRUE : U0;
+      esac;
+
+    next(U1) :=
+      case
+        move = LEFT : F1;
+        move = BACK : L0;
+        move = UP : U0;
+        TRUE : U1;
+      esac;
+
+    next(U2) :=
+      case
+        move = LEFT : F2;
+        move = FRONT : R1;
+        move = UP : U1;
+        TRUE : U2;
+      esac;
+
+    next(U3) :=
+      case
+        move = RIGHT : B3;
+        move = FRONT : R2;
+        move = UP : U2;
+        TRUE : U3;
+      esac;
+     
+    --Left transition rules
+    next(L0) :=
+      case
+        move = BACK : D0;
+        move = DOWN : F2;
+        move = LEFT : L3;
+        TRUE : L0;
+      esac;
+
+    next(L1) :=
+      case
+        move = FRONT : B2;
+        move = DOWN : F3;
+        move = LEFT : L0;
+        TRUE : L1;
+      esac;
+    
+    next(L2) :=
+      case
+        move = FRONT : B2;
+        move = UP : B2;
+        move = LEFT : L1;
+        TRUE : L2;
+      esac;
+
+    next(L3) :=
+      case
+        move = BACK : D3;
+        move = UP : B3;
+        move = LEFT : L2;
+        TRUE : L3;
+      esac;
+
+      --Down transition rules
+      next(D0) :=
+        case
+          move = BACK : R0;
+          move = RIGHT : F3;
+          move = DOWN : D3;
+          TRUE : D0;
+        esac;
+
+      next(D1) :=
+        case
+          move = FRONT : L1;
+          move = RIGHT : F0;
+          move = DOWN : D0;
+          TRUE : D1;
+        esac;
+      
+      next(D2) :=
+        case
+          move = FRONT : L2;
+          move = LEFT : B1;
+          move = DOWN : D1;
+          TRUE : D2;
+        esac;
+      
+      next(D3) :=
+        case
+          move = BACK : R3;
+          move = LEFT : B2;
+          move = DOWN : D2;
+          TRUE : D3;
+        esac;
+
+      --Back transition rules
+      next(B0) :=
+        case
+          move = DOWN : L0;
+          move = RIGHT : D1;
+          move = BACK : B3;
+          TRUE : B0;
+        esac;
+      
+      next(B1) :=
+        case
+          move = DOWN : L1;
+          move = LEFT : U1;
+          move = BACK : B0;
+          TRUE : B1;
+        esac;
+      
+      next(B2) :=
+        case
+          move = LEFT : U2;
+          move = UP : R0;
+          move = BACK : B1;
+          TRUE : B2;
+        esac;
+      
+      next(B3) :=
+        case
+          move = RIGHT : D2;
+          move = UP : R3;
+          move = BACK : B2;
+          TRUE : B3;
+        esac;
+
+    FAIRNESS TRUE
