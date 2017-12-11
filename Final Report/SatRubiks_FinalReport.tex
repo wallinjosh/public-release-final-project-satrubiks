@@ -225,13 +225,13 @@ More work needs to be done in solving the issues with the SAT solvers not being 
 \section{A Bounded Model Checking Approach}
 
 \subsection{Background}
-When model checking an incredibly large finite (or potentially infinite) state space, a natural approach consists of limiting the search to only those states that are deemed ``relevant"; in many cases, this ``relevance" may be defined by a proximity to the start of the model, a finite limit on the distance from the initial state that is to be checked. The number of steps from the initial state, $k$, that must be visited to demonstrate adherence of a system to a particular property is referred to as the \textit{completeness threshold} (CITE). For a property, such as $\always \phi$, $k$ is selected such that all states are reachable within $k$ steps from the initial state. Thus, showing that no property violation occurs in this bound is sufficient to demonstrate that no violation occurs for any valid run of the system.
+When model checking an incredibly large finite (or potentially infinite) state space, a natural approach consists of limiting the search to only those states that are deemed ``relevant"; in many cases, this ``relevance" may be defined by a proximity to the start of the model, a finite limit on the distance from the initial state that is to be checked. The number of steps from the initial state, $k$, that must be visited to demonstrate adherence of a system to a particular property is referred to as the \textit{completeness threshold} \cite{biere}. For a property, such as $\always \phi$, $k$ is selected such that all states are reachable within $k$ steps from the initial state. Thus, showing that no property violation occurs in this bound is sufficient to demonstrate that no violation occurs for any valid run of the system.
 
 \subsection {Method}
-As demonstrated by (CITE) in (YEAR), the 2x2x2 Rubik's Cube is designed such that the upper bound on the number of (quarter-turn) moves between any two states is 14. This serves as a natural bound for model checking this system, as a solution to the cube must reachable within 14 moves. By creating an accurate (i.e. verified) model of the Rubik's Cube, bounded model checking with a bound of 14 steps from the initial state shall produce a solution for each possible configuration of the cube.
+The 2x2x2 Rubik's Cube is designed such that the upper bound on the number of (quarter-turn) moves between any two states is 14 (``God's Number"). This serves as a natural bound for model checking this system, as a solution to the cube must reachable within 14 moves. By creating an accurate (i.e. verified) model of the Rubik's Cube, bounded model checking with a bound of 14 steps from the initial state shall produce a solution for each possible configuration of the cube.
 
 \subsection {2x2x2 Model}
-Initially, nuXmv seemed to be the best choice for the Rubik's Cube model, as it was the symbolic and bounded model checking tool discussed in class. However, for reasons outlined below, this approach was eventually abandoned in favor of using a model created in C and checked via the C Bounded Model Checker (CBMC). This model was easier to debug and clearer to the writer, though it tended to produce quite large SAT queries on the back end.
+Initially, nuXmv \cite{nuxmv} seemed to be the best choice for the Rubik's Cube model, as it was the symbolic and bounded model checking tool discussed in class. However, for reasons outlined below, this approach was eventually abandoned in favor of using a model created in C and checked via the C Bounded Model Checker (CBMC) \cite{cbmc}. This model was easier to debug and clearer to the writer, though it tended to produce quite large SAT queries on the back end.
 
 \subsubsection {nuXmv}
 The first model to be produced, excerpted below and fully included in Appendix D, explicitly enumerated each of the transitions for all possible turns, with goal states to be captured via LTL safety properties. An approach adopted for this model, and for all following, consisted of beginning the model at the solved state; thus, the expected output would be a series of moves to reach the (real, initial) unsolved state.\\
@@ -242,7 +242,7 @@ The first model to be produced, excerpted below and fully included in Appendix D
 \lstinputlisting[language=Promela]{Excerpt_RubiksCube_2x2x2.smv}
 
 \subsubsection {C}
-Recognizing the difficulties with capturing the moves in the first modeling attempt, a functioning simulator in C seemed a better way to capture and debug the transition relation, before returning to the XMV model. This simulator could be captured much more clearly and succinctly, with easy tools to debug via standard output (stdout), as shown in the excerpt below. Unlike in the SMV model, it is much easier to generalize the effects of any rotation; they simply consist of a clockwise rotation of the facelets on the rotating face, as well as a clockwise ``swap" of the connected facelets on the four sides adjacent to the current side. By capturing this for each of the faces (and thus their associated rotations), the rotateCCW() function could be written. A clockwise rotation is then just three counterclockwise rotations. From this "adjacencyList", it is easy to read how a counterclockwise rotation will affect the facelets: for a rotation of the FRONT face, the R0 (``Right 0") facelet will become the color of the U1 (``Up 1") facelet, which will become the color of the L2 ("Left 2") facelet.
+Recognizing the difficulties with capturing the moves in the first modeling attempt, a functioning simulator in C seemed a better way to capture and debug the transition relation, before returning to the XMV model. This simulator could be captured much more clearly and succinctly, with easy tools to debug via standard output (stdout), as shown in the excerpt below. Unlike in the SMV model, it is much easier to generalize the effects of any rotation; they simply consist of a clockwise rotation of the facelets on the rotating face, as well as a clockwise ``swap" of the connected facelets on the four sides adjacent to the current side. By capturing this for each of the faces (and thus their associated rotations), the rotateCCW() function could be written. A clockwise rotation is then just three counterclockwise rotations. From this ``adjacencyList", it is easy to read how a counterclockwise rotation will affect the facelets: for a rotation of the FRONT face, the R0 (``Right 0") facelet will become the color of the U1 (``Up 1") facelet, which will become the color of the L2 (``Left 2") facelet.
 
 \vspace{0.3cm}
 \lstinputlisting[language=C]{Excerpt_Rubiks_2x2x2_Interactive.c}
@@ -267,7 +267,7 @@ For this model, advanced methods of verification were unavailable, initially. An
 
 \subsection {C Bounded Model Checker (CBMC)}
 
-The C Bounded Model Checker (CBMC) was first demonstrated by Clarke et al in 2004, as a way to check the consistency of Verilog and C models of hardware and software systems. By converting ANSI-C code into an intermediate, symbolic representation, the full program could be captured in CNF form and fed to a SAT solver to verify conformance to a series of assertions. By using a special set of functions to capture assumptions, assertions, and nondeterminism, CBMC is able to compute whether there exists a valid execution of a C program which violates the given properties. \\
+The C Bounded Model Checker (CBMC) was first demonstrated by Clarke et al in 2004, as a way to check the consistency of Verilog and C models of hardware and software systems \cite{clarke}. By converting ANSI-C code into an intermediate, symbolic representation, the full program could be captured in CNF form and fed to a SAT solver to verify conformance to a series of assertions. Through the use of a special set of functions to capture assumptions, assertions, and nondeterminism, CBMC is able to compute whether there exists a valid execution of a C program which violates the given properties. \\
 
 \noindent To prepare the model for CBMC, a few additions were made to capture the notion of the ``final state" of the cube (see Appendix F). Though CBMC does provide command-line options for limiting the length of the search, as well as using built-in techniques to automatically do so (thus ``Bounded"), this model instead includes a natural bound as the result of a for-loop that runs only 16 times (see ``Background") and non-deterministically selects a move in each iteration. The target assertion (that the Rubik's cube is in the goal state) is then checked for each iteration. 
 
@@ -290,7 +290,7 @@ Upon running CBMC, with the aforementioned assertions and assumptions, the resul
 \caption{Model checking results for the move sequence `FRUBLD'}
 \end{figure}
 
-It should be noted that, should the reader choose to replicate the work given above, command line options were used with CBMC to ensure correctness. As a result of the way that the C model was written the for loop would \textbf{always} run 16 times. Depending on the placement of the assertion, the results of the model checking run may be different:
+\noindent It should be noted that, should the reader choose to replicate the work given above, command line options were used with CBMC to ensure correctness. As a result of the way that the C model was written the for loop would \textbf{always} run 16 times. Depending on the placement of the assertion, the results of the model checking run may be different:
 
 \begin{enumerate}
 \item If the assertion was placed within the for loop, then the return counterexample may continue past the goal state to keep searching. This is as a result of the unrolling that occurs within CBMC. An assertion appearing within a loop is actually unrolled into a set of separate assertions, each of which is checked in the unrolled code. CBMC will continue searching until the end of the program is reached (i.e. all iterations of the loop are complete) or until all of the assertions have failed (in this case, necessarily until all iterations of the loop are complete). This is unnecessarily wasteful for the (significant) number of arrangements that are less than 16 rotations away.
@@ -307,7 +307,7 @@ As the 2x2x2 model was successfully used to produce solutions, it was decided ag
 
 \subsubsection {C}
 
-Unlike the case of the 2x2x2 model, the 3x3x3 model was quite simple to implement initially, taking less than an hour to create. By carefully placing the new cubes ('X5-8' for each side 'X'), the adjacency list was easily extended to capture the transition relation for the 3x3x3. Again, an interactive version of the model was created first, so that it could be compared to existing implementations for correctness. This code is included in Appendix G.
+Unlike the case of the 2x2x2 model, the 3x3x3 model was quite simple to implement initially, taking less than an hour to create. By carefully placing the new cubes (`X5-8' for each side `X'), the adjacency list was easily extended to capture the transition relation for the 3x3x3. Again, an interactive version of the model was created first, so that it could be compared to existing implementations for correctness. This code is included in Appendix G.
 
 \subsection {Verification}
 
@@ -340,7 +340,7 @@ Again, the C model was appropriately annotated (see Appendix H) to allow for CBM
 
 \subsection {``Under the hood": Minisat and CBMC}
 
-In pursuit of answers as to what optimizations might be made to the 3x3x3 model, the originating papers for Minisat (CITE) and CBMC (CITE both conversion papers) were consulted. Upon reviewing the CBMC paper, it was clear that the conversion heavily favored unrolled loops, an absence of pointers, and the avoidance of arrays. For pointers, the number of cnf clauses and variables grew exponentially, as a clause was generated for to represent not only the actual assignment of the pointer given in the code, but also every possible assignment based on the given datatype. Similarly, assignments to array variables generated a significant number of additional variables and clauses, to capture not only that an assignment had been made to the correct cell, but also that no assignments had been made to the other cells. Finally, loop unrolling required a series of intermediate steps between creating several GOTO statements and conditionals. \\
+In pursuit of answers as to what optimizations might be made to the 3x3x3 model, the original papers for Minisat \cite{een} and CBMC \cite{clarke}, \cite{clarke2} were consulted. Upon reviewing the CBMC paper, it was clear that the conversion heavily favored unrolled loops, an absence of pointers, and the avoidance of arrays. For pointers, the number of cnf clauses and variables grew exponentially, as a clause was generated for to represent not only the actual assignment of the pointer given in the code, but also every possible assignment based on the given datatype. Similarly, assignments to array variables generated a significant number of additional variables and clauses, to capture not only that an assignment had been made to the correct cell, but also that no assignments had been made to the other cells. Finally, loop unrolling required a series of intermediate steps between creating several GOTO statements and conditionals. \\
 
 \noindent The authors of Minisat were also very transparent in the workings of their software. Minisat was designed to be intentionally clear and simple to interested developers, but was also meant to be general in the set of problems for which it is applicable. As such, several of the heuristics are not necessarily tuned to solve Rubik's Cubes. While the exact effects on this problem were not studied closely for this work, fine-tuning of multiple constants used within the source code of Minisat could improve overall performance. For example, Minisat disregards learned clauses after they go unused for a certain amount of time. It is possible that, in the case of this particular problem, these learned clauses may be valuable, and the constant could be adjusted appropriately (at the cost of memory during the software execution).
 
@@ -621,18 +621,38 @@ Appendix H: CBMC Annotated 3x3x3 C Model
 \newpage
 
 \begin{thebibliography}{9}
+
+\item{2DSim}
+\textit{Online 2D Pocket Cube Simulator}. https://ruwix.com/online-puzzle-simulators/2x2x2-pocket-cube-simulator.php.
+
+\item{3DSim}
+\textit{Online 3D Rubik's Cube Simulator}. https://ruwix.com/online-puzzle-simulators/3x3x3-rubiks-cube-simulator.php.
+
+\bibitem{biere} Biere, A. et al. ``Bounded Model Checking." \textit{Advances in Computers}, vol. 58, 2003.
+
+\bibitem{CaDiCaL} 
+\textit{{CaDiCaL}. 
+http://fmv.jku.at/cadical/}
+
+\bibitem{cbmc} \textit{The C Bounded Model Checker (CBMC)}. http://www.cprover.org/cbmc/.
+
 \bibitem{chenjingchao} 
 Chen, Jingchao. 
 \textit{{Solving Rubik's Cube Using SAT Solver}. 
 Computing Research Repository - CORR, 2011.}
 
+\bibitem{clarke} Clarke, E. , Kroening, D. and Yorav, K. 2003. ``Behavioral consistency of C and verilog programs using bounded model checking." In \textit{Proceedings of the 40th annual Design Automation Conference (DAC '03)}. ACM, New York, NY.
+
+\bibitem{clarke2} Clarke, E., Kroening, D., Sharygina, N. et al. Formal Methods in System Design (2004) 25: 105. 
+
+\bibitem{een} Een N., Sorensson N. (2004) An Extensible SAT-solver. In \textit{Theory and Applications of Satisfiability Testing}. SAT 2003. Lecture Notes in Computer Science, vol 2919.
+
+\bibitem{nuxmv}
+\textit{nuXmv Model Checker}. https://nuxmv.fbk.eu/. 
+
 \bibitem{sabr} 
 \textit{{Sabr}. 
 http://sabrlang.org/}
-
-\bibitem{CaDiCaL} 
-\textit{{CaDiCaL}. 
-http://fmv.jku.at/cadical/}
 
 \bibitem{satrubiks}
 SatRubiks.

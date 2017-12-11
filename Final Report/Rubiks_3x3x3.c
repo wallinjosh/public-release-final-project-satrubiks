@@ -18,63 +18,6 @@
 #define INITIAL_CONFIGURATION cube[FRONT][0]==GREEN&&cube[FRONT][1]==GREEN&&cube[FRONT][2]==GREEN&&cube[FRONT][3]==GREEN&&cube[FRONT][4]==GREEN&&cube[FRONT][5]==GREEN&&cube[FRONT][6]==GREEN&&cube[FRONT][7]==GREEN&&cube[FRONT][8]==GREEN&&cube[BACK][0]==BLUE&&cube[BACK][1]==BLUE&&cube[BACK][2]==BLUE&&cube[BACK][3]==BLUE&&cube[BACK][4]==BLUE&&cube[BACK][5]==BLUE&&cube[BACK][6]==BLUE&&cube[BACK][7]==BLUE&&cube[BACK][8]==BLUE&&cube[LEFT][0]==ORANGE&&cube[LEFT][1]==ORANGE&&cube[LEFT][2]==ORANGE&&cube[LEFT][3]==ORANGE&&cube[LEFT][4]==ORANGE&&cube[LEFT][5]==ORANGE&&cube[LEFT][6]==ORANGE&&cube[LEFT][7]==ORANGE&&cube[LEFT][8]==ORANGE&&cube[RIGHT][0]==RED&&cube[RIGHT][1]==RED&&cube[RIGHT][2]==RED&&cube[RIGHT][3]==RED&&cube[RIGHT][4]==RED&&cube[RIGHT][5]==RED&&cube[RIGHT][6]==RED&&cube[RIGHT][7]==RED&&cube[RIGHT][8]==RED&&cube[UP][0]==WHITE&&cube[UP][1]==WHITE&&cube[UP][2]==WHITE&&cube[UP][3]==WHITE&&cube[UP][4]==WHITE&&cube[UP][5]==WHITE&&cube[UP][6]==WHITE&&cube[UP][7]==WHITE&&cube[UP][8]==WHITE&&cube[DOWN][0]==YELLOW&&cube[DOWN][1]==YELLOW&&cube[DOWN][2]==YELLOW&&cube[DOWN][3]==YELLOW&&cube[DOWN][4]==YELLOW&&cube[DOWN][5]==YELLOW&&cube[DOWN][6]==YELLOW&&cube[DOWN][7]==YELLOW&&cube[DOWN][8]==YELLOW
 #define FRUBLD cube[FRONT][0]==BLUE&&cube[FRONT][1]==WHITE&&cube[FRONT][2]==RED&&cube[FRONT][3]==YELLOW&&cube[FRONT][4]==WHITE&&cube[FRONT][5]==YELLOW&&cube[FRONT][6]==YELLOW&&cube[FRONT][7]==ORANGE&&cube[FRONT][8]==GREEN&&cube[BACK][0]==WHITE&&cube[BACK][1]==GREEN&&cube[BACK][2]==YELLOW&&cube[BACK][3]==RED&&cube[BACK][4]==WHITE&&cube[BACK][5]==YELLOW&&cube[BACK][6]==RED&&cube[BACK][7]==BLUE&&cube[BACK][8]==BLUE&&cube[LEFT][0]==ORANGE&&cube[LEFT][1]==WHITE&&cube[LEFT][2]==RED&&cube[LEFT][3]==BLUE&&cube[LEFT][4]==WHITE&&cube[LEFT][5]==GREEN&&cube[LEFT][6]==BLUE&&cube[LEFT][7]==ORANGE&&cube[LEFT][8]==ORANGE&&cube[RIGHT][0]==ORANGE&&cube[RIGHT][1]==BLUE&&cube[RIGHT][2]==YELLOW&&cube[RIGHT][3]==GREEN&&cube[RIGHT][4]==BLUE&&cube[RIGHT][5]==YELLOW&&cube[RIGHT][6]==GREEN&&cube[RIGHT][7]==RED&&cube[RIGHT][8]==RED&&cube[UP][0]==GREEN&&cube[UP][1]==ORANGE&&cube[UP][2]==WHITE&&cube[UP][3]==RED&&cube[UP][4]==GREEN&&cube[UP][5]==ORANGE&&cube[UP][6]==RED&&cube[UP][7]==WHITE&&cube[UP][8]==WHITE&&cube[DOWN][0]==GREEN&&cube[DOWN][1]==WHITE&&cube[DOWN][2]==BLUE&&cube[DOWN][3]==ORANGE&&cube[DOWN][4]==GREEN&&cube[DOWN][5]==RED&&cube[DOWN][6]==BLUE&&cube[DOWN][7]==ORANGE&&cube[DOWN][8]==YELLOW
 
-// GOAL CONFIG
-  // cube[FRONT][0]=BLUE;
-  // cube[FRONT][1]=WHITE;
-  // cube[FRONT][2]=RED;
-  // cube[FRONT][3]=YELLOW;
-  // cube[FRONT][4]=WHITE;
-  // cube[FRONT][5]=YELLOW;
-  // cube[FRONT][6]=YELLOW;
-  // cube[FRONT][7]=ORANGE;
-  // cube[FRONT][8]=GREEN;
-  // cube[BACK][0]=WHITE;
-  // cube[BACK][1]=GREEN;
-  // cube[BACK][2]=YELLOW;
-  // cube[BACK][3]=RED;
-  // cube[BACK][4]=WHITE;
-  // cube[BACK][5]=YELLOW;
-  // cube[BACK][6]=RED;
-  // cube[BACK][7]=BLUE;
-  // cube[BACK][8]=BLUE;
-  // cube[LEFT][0]=ORANGE;
-  // cube[LEFT][1]=WHITE;
-  // cube[LEFT][2]=RED;
-  // cube[LEFT][3]=BLUE;
-  // cube[LEFT][4]=WHITE;
-  // cube[LEFT][5]=GREEN;
-  // cube[LEFT][6]=BLUE;
-  // cube[LEFT][7]=ORANGE;
-  // cube[LEFT][8]=ORANGE;
-  // cube[RIGHT][0]=ORANGE;
-  // cube[RIGHT][1]=BLUE;
-  // cube[RIGHT][2]=YELLOW;
-  // cube[RIGHT][3]=GREEN;
-  // cube[RIGHT][4]=BLUE;
-  // cube[RIGHT][5]=YELLOW;
-  // cube[RIGHT][6]=GREEN;
-  // cube[RIGHT][7]=RED;
-  // cube[RIGHT][8]=RED;
-  // cube[UP][0]=GREEN;
-  // cube[UP][1]=ORANGE;
-  // cube[UP][2]=WHITE;
-  // cube[UP][3]=RED;
-  // cube[UP][4]=GREEN;
-  // cube[UP][5]=ORANGE;
-  // cube[UP][6]=RED;
-  // cube[UP][7]=WHITE;
-  // cube[UP][8]=WHITE;
-  // cube[DOWN][0]=GREEN;
-  // cube[DOWN][1]=WHITE;
-  // cube[DOWN][2]=BLUE;
-  // cube[DOWN][3]=ORANGE;
-  // cube[DOWN][4]=GREEN;
-  // cube[DOWN][5]=RED;
-  // cube[DOWN][6]=BLUE;
-  // cube[DOWN][7]=ORANGE;
-  // cube[DOWN][8]=YELLOW;
-
-
 int cube[6][9];
 
 int* adjacencyList[6][4][3];
