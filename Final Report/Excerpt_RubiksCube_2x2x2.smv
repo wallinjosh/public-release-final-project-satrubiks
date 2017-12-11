@@ -1,0 +1,31 @@
+  ASSIGN
+
+    init(F0) := yellow;
+    init(F1) := yellow;
+    init(F2) := yellow;
+    init(F3) := yellow; 
+
+    .
+    .
+    .
+
+    --Front transition rules
+    next(F0) :=
+      case
+        move = UP : L0;
+        move = RIGHT : U0;
+        move = FRONT : F3;
+        TRUE : F0;
+      esac;
+
+    next(F1) :=
+      case
+        move = UP : L1;
+        move = LEFT : D1;
+        move = FRONT : F0;
+        TRUE : F1;
+      esac;
+
+    .
+    .
+    .
