@@ -1,4 +1,4 @@
-        y w y
+-       y w y
         w   g
         o y r
 o r g   w b g   y y b   r b g
@@ -20,7 +20,7 @@ b w w	b y g	y r g	r o r
 		w y y
 		
 
-		r y r
+-		r y r
 		g	y
 		o b g
 b r w	b w r	w o g	y g y
