@@ -1,6 +1,0 @@
-		y w
-		r r
-b g 	y b		w o		g o
-w g 	w g		y y		r b
-		r o
-		o b

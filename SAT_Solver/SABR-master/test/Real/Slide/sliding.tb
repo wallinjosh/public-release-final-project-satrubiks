@@ -1,0 +1,59 @@
+# solves sliding puzzle
+
+# defines symbols
+Sym{
+	0 1 2 3 4 5 6 7 u
+}
+
+Board{
+	a0 a1 a2;
+	b0 b1 b2;
+	c0 c1 c2;
+}
+
+# starting position of board
+Start{
+	3 4 2;
+	1 0 5;
+	7 u 6;
+}
+
+# desired ending position of board
+End{
+	0 1 2;
+	3 4 5;
+	6 7 u;
+}
+
+# this is for if 2 objects are adjacent to each other
+Obj Adj{ 
+        block1 block2 
+}
+
+# if one is empty, we can either move left or right
+Trans Adj{
+	block u
+=>
+	u block
+}
+
+Trans Adj{
+	u block
+=>
+	block u
+}
+
+# all adjacent possibilities
+DesObj Adj{	a0 a1	}
+DesObj Adj{	a1 a2	}
+DesObj Adj{	b0 b1	}
+DesObj Adj{	b1 b2	}
+DesObj Adj{	c0 c1	}
+DesObj Adj{	c1 c2	}
+
+DesObj Adj{	a0 b0	}
+DesObj Adj{	b0 c0	}
+DesObj Adj{	a1 b1	}
+DesObj Adj{	b1 c1	}
+DesObj Adj{	a2 b2	}
+DesObj Adj{	b2 c2	}

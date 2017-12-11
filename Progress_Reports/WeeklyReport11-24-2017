@@ -1,0 +1,15 @@
+Hello Dr. Rozier,
+We all hope that you had a wonderful Thanksgiving! We also weren't sure if you were expecting a weekly report from us this week but we felt that it was safe to assume that you were. This week, despite the break for Thanksgiving, we were able to make some good progress.
+
+SAT-Solver
+The SAT Solver is really coming along. The model for the 3x3x3 Rubik's cube has been written but still needs to be tested (we think its going to take a while to run based on current results). We have also been generating many more benchmarks for the 2x2x2 model which has been going through verification and debugging. We would also like to look into the generation of the conjunctive normal formulas (cnfs) but that may prove to be fruitless or out of the scope of what we are trying to do. Coming up we would also like to start looking into refining the 3x3x3 model and then into optimization.
+
+Spin
+Creating a working never claim is proving to be a quite challenging process which we believe is the main road block prohibiting the model from working at the moment and debugging this issue is difficult further complicating the issue. So work on that will continue on trying to get a proper never claim.
+
+NuXmv
+Model validation is in full swing which is being performed by increasing the complexity of properties, such as seeing if a certain face can be a specific color, however as the complexity increased we found issues in the transformation logic. This discovery led us back to the literature and group theory in Rubik's cubes. Given this return to literature we have an idea on how to build the 2x2x2 model which should scale to the 3x3x3 easily. Most of the focus here appears to be in the validation of the model, rather than the intricacies of symbolic model checking.
+
+As the SAT-Solver process has matured more quickly than the others we will be shifting some focus from that to the other methods in order to get working models to compare for the final report. In light of this we are starting to believe that the simplest and quickest method of building these puzzles appears to be the SAT solver approach.
+
+SatRubiks

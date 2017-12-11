@@ -1,0 +1,4 @@
+makefile
+config.h
+cadical
+cadical.o

@@ -1,0 +1,122 @@
+Sym{ b o w r g y }
+
+Board {
+
+.....	w1 w2;
+.....	w3 w4;
+o1 o2 	g1 g2	r1 r2	b1 b2;
+o3 o4 	g3 g4	r3 r4	b3 b4;
+.....	y1 y2;
+.....	y3 y4;
+
+}
+
+Start {
+
+		y w;
+		r r;
+b g 	y b		w o		g o;
+w g 	w g		y y		r b;
+		r o;
+		o b;
+
+}
+
+End {
+
+		w w;
+		w w;
+o o 	g g		r r		b b;
+o o 	g g		r r		b b;
+		y y;
+		y y;
+
+}
+
+Trans Clock:Side{
+
+	t1 t2;
+
+l2	f1 f2	r1;
+l1	f3 f4	r2;
+
+	b1 b2;
+=>
+	l1 l2;
+
+b1	f3 f1	t1;
+b2	f4 f2	t2;
+
+	r2 r1;
+}
+
+Trans CounterClock:Side{
+
+	t1 t2;
+
+l2	f1 f2	r1;
+l1	f3 f4	r2;
+
+	b1 b2;
+=>
+	r1 r2;
+
+t2	f2 f4	b2;
+t1	f1 f3	b1;
+
+	l2 l1;
+}
+
+DesObj Front:Side{
+	b2 b1;
+	
+o1	w1 w2	r2;
+o2	w3 w4	r1;
+	
+	g1 g2;
+}
+
+DesObj Top:Side{
+	w2 w1;
+
+r2	b1 b2	o1;
+r4	b3 b4	o3;
+
+	y4 y3;
+}
+
+DesObj Back:Side{
+	g3 g4;
+
+o4	y1 y2	r3;
+o3	y3 y4	r4;
+
+	b4 b3;
+}
+
+DesObj Bottom:Side{
+	w3 w4;
+
+o2	g1 g2	r1;
+o4	g3 g4	r3;
+
+	y1 y2;
+}
+
+DesObj Left:Side{
+	w1 w3;
+
+b2	o1 o2	g1;
+b4	o3 o4	g3;
+
+	y3 y1;
+}
+
+DesObj Right:Side{
+	w4 w2;
+
+g2	r1 r2	b1;
+g4	r3 r4	b3;
+
+	y2 y4;
+}

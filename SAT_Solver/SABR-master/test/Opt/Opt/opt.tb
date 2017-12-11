@@ -1,0 +1,12 @@
+
+Sym{ 0 1; }
+
+Board{ a b; }
+
+# start end unnecessary
+# Start{ (0,1) (0,1); }
+# End  { (0,1) (0,1); }
+
+Opt MyOpt:Board { 0 0; }
+
+Opt MyOpt:Board { 1 1; }
