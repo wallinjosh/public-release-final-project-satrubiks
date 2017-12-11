@@ -39,7 +39,7 @@
 ### CNF File Details
 |Run Number|Number of Variables|Number of Clauses|Levels|Start Pattern|Result Files|
 |---|---|---|---|---|---|
-|0|3564|32254|20|[3x3x3 (1)](sabr_progs/start_patterns3.txt)|[Sabr](results/3x3x3/sabr-result1-20.txt), [Cadical](results/3x3x3/cadical-result1-20.txt)|
+|0|6900|57152|20|[3x3x3 (1)](sabr_progs/start_patterns3.txt)|[Sabr](results/3x3x3/sabr-result1-20.txt), [Cadical](results/3x3x3/cadical-result1-20.txt)|
 |1|6900|57158|20|[3x3x3 (2)](sabr_progs/start_patterns3.txt)|[Sabr](results/3x3x3/sabr-result2-20.txt), [Cadical](results/3x3x3/cadical-result2-20.txt)|
 |2|3564|32254|20|[3x3x3 (3)](sabr_progs/start_patterns3.txt)|[Sabr](results/3x3x3/sabr-result3-20.txt), [Cadical](results/3x3x3/cadical-result3-20.txt)|
 
