@@ -372,7 +372,7 @@ Though, initially, SMV seemed like an appropriate modeling language for this pro
 sufficient information such that a specialized ``RubikSAT" could be developed specifically to solve this problem.
 
 \section{Final Conclusions}
-
+Though all three methods were shown to be valid solutions to the problem of solving a 2x2x2 Rubik's Cube, success was much more limited when expanded to a 3x3x3. In the case of model checking in Spin, memory issues prevented this from calculating a solution. Potential future work on this method may attempt to expand the available memory to a point that makes the model checker practically useful. Similarly, though CBMC was able to produce useful solutions for a 2x2x2 cube, the computation never terminated for calculating the results of a 3x3x3 cube. Future work in this case appears promising, focused on optimizing Minisat and CBMC's symbolic representation of ANSI-C. Finally, the direct SAT solver approach, via SABR, appeared the most successful. Though it was not able to compute solutions in all cases, it was the only method to do so for any 3x3x3 configuration. Given the number of variables and clauses generated, it is unclear what optimizations may exist. That being said, a Rubik's Cube focused SAT solver may have better luck tackling this problem.
 
 \pagebreak
 \begin{center}
