@@ -1,0 +1,31 @@
+        y w y
+        w   g
+        o y r
+o r g   w b g   y y b   r b g
+o   o   b   w   g   y   r   w
+r g b   w b o   y o r   w o w
+        o r b
+        r   g
+        g y b
+
+		
+		y g b
+		g	g
+		o b w
+r o g	w r b	o y y	o r b
+b	w	o	b	y	b	o	w
+b w w	b y g	y r g	r o r
+		r r o
+		g	w
+		w y y
+		
+
+		r y r
+		g	y
+		o b g
+b r w	b w r	w o g	y g y
+g	r	b	g	o	w	o	w
+y r o	g y o	w b r	w b o
+		y r g
+		w y o
+		b y b

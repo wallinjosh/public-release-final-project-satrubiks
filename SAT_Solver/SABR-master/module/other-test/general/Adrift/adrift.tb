@@ -1,0 +1,56 @@
+# http://www.playadrift.com/
+
+Sym { R B X }
+
+Board {
+     	.....   a0;
+     	....  b0  b1;
+     	... c0  c1  c2;
+     	....  d0  d1;
+     	.....   e0;
+	x0 x1 x2 . y0 y1 y2;
+	x3 x4 x5 . y3 y4 y5;
+	x6 x7 x8 . y6 y7 y8;
+}
+
+Req Board {
+                 R;
+     	      !X   X;
+     	     B  !X   X;
+     	      !X  !X;
+     	        !X;
+	 X  X !X    X !X  X;
+	 X  X !X    X !X  X;
+	 B !X !X    X !X  R;
+}
+
+# each color must be surrounded by exactly two of its color, unless 
+# it is on an end, in which case it is surrounded by exactly one of its color
+
+# middle block followed by sides
+Opt link2 { v  v  v }
+
+Opt link3 { v !v  v  v }
+Opt link3 { v  v !v  v }
+Opt link3 { v  v  v !v }
+
+Opt link4 { v  v  v !v !v }
+Opt link4 { v  v !v  v !v }
+Opt link4 { v  v !v !v  v }
+Opt link4 { v !v  v  v !v }
+Opt link4 { v !v  v !v  v }
+Opt link4 { v !v !v  v  v }
+
+# all links
+DesObj link3 { b0 a0 c1 c0 }
+DesObj link4 { c1 b0 b1 d1 d0 }
+DesObj link4 { d0 c0 c1 e0 x1 }
+DesObj link4 { d1 e0 c1 c2 y1 }
+DesObj link4 { e0 d0 d1 y0 x2 }
+DesObj link4 { x2 e0 y0 x5 x1 }
+DesObj link4 { x5 x2 y3 x8 x4 }
+DesObj link3 { x7 x4 x8 x6 }
+DesObj link3 { x8 x5 y6 x7 }
+DesObj link4 { y1 d1 y2 y4 y0 }
+DesObj link4 { y4 y1 y5 y7 y3 }
+DesObj link3 { y7 y4 y8 y6 }
