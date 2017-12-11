@@ -55,7 +55,7 @@
 
 \begin{document}
 
-\title{Solving a Rubik's Cube via Formal Methods\\[3cm] SatRubiks }
+\title{Applying Formal Techniques\\ to Solving Rubik's Cubes\\[3cm] SatRubiks }
 
 \author{Nathan Scheirer, Joshua Wallin, Patrick Sivets}
 
@@ -364,9 +364,13 @@ To compensate for the potential sources of overhead mentioned above, the 3x3x3 m
 
 \noindent Unexpectedly, the number of variables and clauses was reduced even further. This placed the SAT query for the 3x3x3 within two orders of magnitude of the SABR query generated above. That being said, a solution was still not computed in sufficient time. Again, it is possible that tool optimizations, the lack of model optimizations, and/or the complexity of the generated CNF clauses are to blame.
 
-\subsection {Conclusion}
+\subsection {Conclusion \& Future Work}
 
-\subsection {Future Work}
+Though, initially, SMV seemed like an appropriate modeling language for this problem, the actual act of modeling proved to be to complicated and difficult to bug. Alternatively, using C proved to be relatively straightforward. This approach may have simply shifted the focus from developing a correct model (as was the issue in SMV) to instead optimizing a correct model (as was the issue in C). Either way, the final C model proved to be very effective for a 2x2x2 Rubik's Cube, producing a solution in approximately seven minutes, while it was not appropriate for a 3x3x3 cube. The attempts made at optimizing code significantly reduced the size of the SAT query generated for the problem, but still the query proved to be too large for the machine used to produce a solution within reasonable time.\\
+
+\noindent As discussed previously, the code for both CBMC and Minisat are publicly available, with scholarly works discussing how exactly each works. Future attempts at using a bounded model checking approach for solving Rubik's Cubes may need to focus on optimizing each of these tools appropriately for the problem. A thorough comparison of the generated SAT queries by SABR and CBMC might provide a hint as to how exactly the CBMC ANSI-C conversion could be further improved. Study of the heuristics used in Minisat, as well as the learning process used, could indicate how numeric constants and algorithms could be altered. Additionally, the work on SAT solver development included in the Minisat paper provides 
+sufficient information such that a specialized ``RubikSAT" could be developed specifically to solve this problem.
+
 
 \newpage
 
